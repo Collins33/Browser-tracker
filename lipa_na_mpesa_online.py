@@ -14,7 +14,6 @@ consumer_secret = os.getenv('CONSUMER_SECRET')
 unformated_time = datetime.now()
 formatted_date = unformated_time.strftime("%Y%m%d%H%M%S")
 
-business_short_code+pass_key+formatted_date
 date_to_encode = business_short_code+pass_key+formatted_date
 encoded_string = base64.b64encode(
     date_to_encode.encode())  # encode it into binary
@@ -28,7 +27,7 @@ def generate_credentials():
     return auth_response.json()['access_token']
 
 
-def lipa_na_mpesa():
+def lipa_na_mpesa_online():
     access_token = generate_credentials()
     api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
     headers = {"Authorization": "Bearer %s" % access_token}
@@ -51,4 +50,4 @@ def lipa_na_mpesa():
     print(response.text)
 
 
-lipa_na_mpesa()
+lipa_na_mpesa_online()
