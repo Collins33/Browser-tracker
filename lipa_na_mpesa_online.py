@@ -2,8 +2,9 @@ import os
 from datetime import datetime
 from requests.auth import HTTPBasicAuth
 import base64
-
 import requests
+
+from generate_credentials import generate_credentials
 
 phone_number = os.getenv('PHONE_NUMBER')
 business_short_code = os.getenv('BUSINESS_SHORT_CODE')
@@ -18,13 +19,6 @@ date_to_encode = business_short_code+pass_key+formatted_date
 encoded_string = base64.b64encode(
     date_to_encode.encode())  # encode it into binary
 decoded_password = encoded_string.decode('utf-8')
-
-
-def generate_credentials():
-    api_URL = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
-    auth_response = requests.get(
-        api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-    return auth_response.json()['access_token']
 
 
 def lipa_na_mpesa_online():
