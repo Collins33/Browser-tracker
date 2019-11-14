@@ -26,7 +26,7 @@ SECRET_KEY = '5!%+j=2#n7%)(^w=@@d13x&fo7a-k_ctexet*d7iggfdtp39-l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kalasha.herokuapp.com']
 
 
 # Application definition
