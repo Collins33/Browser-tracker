@@ -3,7 +3,6 @@ import os
 import requests
 
 # security keys
-
 consumer_key = os.getenv('CONSUMER_KEY')
 consumer_secret = os.getenv('CONSUMER_SECRET')
 

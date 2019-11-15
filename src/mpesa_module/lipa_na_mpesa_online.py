@@ -1,7 +1,6 @@
 import os
 from requests.auth import HTTPBasicAuth
 import requests
-
 from generate_credentials import generate_credentials
 from utils import format_date, encode_password_String
 
@@ -31,9 +30,7 @@ def lipa_na_mpesa_online():
         "AccountReference": "11223456",
         "TransactionDesc": "Pay school fees"
     }
-
     response = requests.post(api_url, json=request, headers=headers)
-
     print(response.text)
 
 

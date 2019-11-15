@@ -1,10 +1,8 @@
 import os
-
 import requests
 from generate_credentials import generate_credentials
 
 # REGISTER THE URLs FIRST
-
 access_token = generate_credentials()
 short_code = os.getenv('SHORT_CODE')
 msisdn_number = os.getenv('MSISDN')
@@ -19,7 +17,6 @@ def register_urls():
                "ValidationURL": "https://muru35portfolio.herokuapp.com"}
 
     response = requests.post(api_url, json=request, headers=headers)
-
     print(response.text)
 
 
@@ -33,7 +30,6 @@ def simulate_client_to_business_transaction():
                "BillRefNumber": "12345678"}
 
     response = requests.post(api_url, json=request, headers=headers)
-
     print(response.text)
 
 
